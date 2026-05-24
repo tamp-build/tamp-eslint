@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <RootNamespace>Tamp.Eslint.V9</RootNamespace>
+    <AssemblyName>Tamp.Eslint.V9</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <PackageId>Tamp.Eslint.V9</PackageId>
+    <Description>Tamp CommandPlan wrapper for the ESLint v9 CLI — pattern + style + best-practice linter for TypeScript and JavaScript. Emits SARIF via @microsoft/eslint-formatter-sarif for the Tamp.Sarif ingest chain. Includes smart binary resolution: project-local node_modules/.bin/eslint → pnpm exec eslint → npm exec eslint → global PATH → pre-flight skip via EslintBinaryResolver.IsAvailable.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(TampCorePath)" Condition="'$(TampCoreMode)' == 'project'" />
+    <PackageReference Include="Tamp.Core" Condition="'$(TampCoreMode)' == 'package'" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
