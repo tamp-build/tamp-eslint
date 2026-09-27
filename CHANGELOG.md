@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) 
 - `EslintBinaryResolution` + `EslintResolutionSource` record / enum for explicit binary overrides and dashboard tagging.
 - SARIF integration via `--format @microsoft/eslint-formatter-sarif`; output file enforced when `Sarif=true`.
 - Multi-target `net8.0;net9.0;net10.0`.
+- Package now ships XML documentation files (`.xml`) alongside the assembly, so consumers get IntelliSense and API docs. (Mirrors [tamp-build/tamp#3](https://github.com/tamp-build/tamp/pull/50).)
 
 ### Closes
 
